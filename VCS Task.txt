@@ -1,0 +1,217 @@
+Aarifarshi@AarifArshi MINGW64 ~
+$ mkdir my_new_project
+mkdir: cannot create directory ‘my_new_project’: File exists
+
+Aarifarshi@AarifArshi MINGW64 ~
+$ mkdir new_project
+
+Aarifarshi@AarifArshi MINGW64 ~
+$ CD new_project
+bash: CD: command not found
+
+Aarifarshi@AarifArshi MINGW64 ~
+$ cd new_project
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project
+$ nano test.py
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project
+$ cat test.py
+print("Hello, World!")
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project
+$ git init
+Initialized empty Git repository in C:/Users/Aarifarshi/new_project/.git/
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (master)
+$ git add .
+warning: in the working copy of 'test.py', LF will be replaced by CRLF the next time Git touches it
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (master)
+$ git commit -m "Initial commit"
+[master (root-commit) 29540f6] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.py
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (master)
+$ git remote add origin https://github.com/Aarif2511/my_project.git
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (master)
+$ git branch -M main
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 237 bytes | 237.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Aarif2511/my_project.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git checkout -b feature-branch
+Switched to a new branch 'feature-branch'
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (feature-branch)
+$ nano test_branch.py
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (feature-branch)
+$ cat test_branch.py
+print("New Feature")
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (feature-branch)
+$ git commit -m "Added a new feature"
+On branch feature-branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test_branch.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (feature-branch)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Disable this message with "git config advice.addEmptyPathspec false"
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (feature-branch)
+$ git commit -m "Added a new feature"
+On branch feature-branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test_branch.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (feature-branch)
+$ git add test_branch.py
+warning: in the working copy of 'test_branch.py', LF will be replaced by CRLF the next time Git touches it
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (feature-branch)
+$ git commit -m "Added a new feature"
+[feature-branch 6e2555d] Added a new feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test_branch.py
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (feature-branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git rebase rebase-branch
+fatal: invalid upstream 'rebase-branch'
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git branch
+  feature-branch
+* main
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git checkout -b rebase-branch
+Switched to a new branch 'rebase-branch'
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (rebase-branch)
+$ nano test_rebase.py
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (rebase-branch)
+$ git add test_rebase.py
+warning: in the working copy of 'test_rebase.py', LF will be replaced by CRLF the next time Git touches it
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (rebase-branch)
+$ git commit -m "Added rebase example"
+[rebase-branch ad61aa1] Added rebase example
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test_rebase.py
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (rebase-branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git rebase rebase-branch
+Successfully rebased and updated refs/heads/main.
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git fetch origin
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git checkout -b rebase-branch origin/rebase-branch
+fatal: 'origin/rebase-branch' is not a commit and a branch 'rebase-branch' cannot be created from it
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git rebase rebase-branch
+Current branch main is up to date.
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ nano test_stash.py
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ cat test_stash.py
+print("Temporary changes")
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git stash
+No local changes to save
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ echo 'print("Temporary changes")' >> script1.py
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git stash
+No local changes to save
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git push origin feature-branch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 300 bytes | 100.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'feature-branch' on GitHub by visiting:
+remote:      https://github.com/Aarif2511/my_project/pull/new/feature-branch
+remote:
+To https://github.com/Aarif2511/my_project.git
+ * [new branch]      feature-branch -> feature-branch
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git push origin rebase-branch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 305 bytes | 305.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'rebase-branch' on GitHub by visiting:
+remote:      https://github.com/Aarif2511/my_project/pull/new/rebase-branch
+remote:
+To https://github.com/Aarif2511/my_project.git
+ * [new branch]      rebase-branch -> rebase-branch
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git checkout main
+Already on 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git merge feature-branch
+Merge made by the 'ort' strategy.
+ test_branch.py | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test_branch.py
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git checkout main
+Already on 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Aarifarshi@AarifArshi MINGW64 ~/new_project (main)
+$ git rebase rebase-branch
+Successfully rebased and updated refs/heads/main.
